@@ -1,0 +1,207 @@
+﻿# PROGRAMACIÓN DE COMPUTADORES (Grupo 03) - PARCIAL 2 (35%)
+# Profesor: Oscar Correa Calle
+# Fecha 10/11/2020
+
+
+""" Instrucciones:
+        *. Grabe este archivo con un nombre igual a sus iniciales, con extensión .txt (P.Ej: OCC.txt).
+        *. Cada enunciado lo puede cortar y pegar en el Sublime Text 3 (entre comillas triples).
+        *. Resuelva lo que se solicita en cada enunciado y verifique que corra en el intérprete de Python.
+        *. Corte la respuesta escrita en Python y péguela junto al enunciado correspondiente.
+        *. Proceda igual con los demás enunciados. 
+        *. Grabe el archivo y envíelo al correo: osccorreac@unal.edu.co, antes de las 6:00 pm (10/11/20)
+""" 
+
+
+# CUESTIONARIO
+
+
+""" 1.        Escriba un código con una función 'def' que al correr, dé el mismo resultado de la 
+        siguiente función lambda, y pruébela (invóquela pasándo el valor 5 como parámetro):
+
+cuad = lambda x: x**2; print(cuad(5))
+
+RESPUESTA 1:
+def Potencia_cuadrado(a):
+   	return a**2
+
+print(Potencia_cuadrado(5))
+""" 
+
+""" 2.        Escriba una función que no recibe parámetros, e imprime su nombre 
+        completo y su edad en una sola cadena, de la siguiente manera (P.Ej:): 
+        mi nombre es Oscar Correa Calle y tengo 53 años de edad """
+
+RESPUESTA 2:
+def Datos_personales():
+	a= 'Juan Diego Salgado Giraldo'
+	b = str('19')
+	return str(a + ' y tengo ' + b + ' años de edad')
+
+print(Datos_personales())
+"""
+
+""" 3.        Escriba una función que recibe como parámetros: peso [en kilogramos]
+        y estatura [en metros]. Esta debe calcular y retornar el índice de 
+        masa corporal, definido como: IMC = peso/(estatura)**2. Compruebe su 
+        funcionamiento invocando la función con sus propios valores de peso 
+        y estatura.
+
+RESPUESTA 3:
+def IMC(p,m):
+    return p/(m**2)
+
+print(IMC(60, 1.74))
+"""
+ 
+""" 4.        Escriba un programa que invoque la función anterior con su propio 
+        peso y talla como valores constantes, imprima el índice de masa corporal
+        y lo clasifique de acuerdo con los siguientes criterios: 
+        si IMC es menor de 18.5, imprima "clasificación: bajo peso"
+        si IMC es mayor o igual que 18.5 y menor que 25.0, imprima "clasificación: peso normal"
+        si IMC es mayor o igual que 25.0 y menor que 30.0, imprima "clasificación: sobrepeso"
+        si IMC es mayor o igual que 30.0, imprima "clasificación: Riesgo cardiovaocular"
+
+RESPUESTA 4:
+def IMC(p,m):
+    return p/(m**2)
+
+print(IMC(60, 1.74))
+Indice = (IMC(60, 1.74))
+
+if Indice < 18.5:
+	print('Clasificacion:bajo peso')
+elif 18.5 <= Indice < 25.0:
+     print("clasificación: peso normal")
+elif 25.0 <= Indice < 30.0:
+     print("clasificación: sobrepeso")
+elif  Indice >=30.0:
+     print("clasificación: Riesgo cardiovaocular")
+else: print("IMC erronea")
+"""
+
+
+""" 5.        Escriba un fragmento de código que permita la entrada de datos de 
+        usuario para el programa anterior, con un ciclo while que no se rompa
+        hasta que los valores sean correctos, es decir: que la estatura esté entre 1.50 
+        y 2.30 metros; y que el peso esté entre 35.5 y 199.5 kilogramos.
+
+RESPUESTA 5:
+e = float(input('Ingrese su estatura en metros en el rango de 1.5 y 2,3: '))
+while e < 1.5:
+	print('La estatura es demasiado baja, ingrese una mayor a 1.5 metros: ')
+	e = float(input('Ingrese su estatura en metros en el rango de 1.5 y 2,3: '))
+res = 0
+
+while e > 2.3:
+    print('La estatura es demasiado alta, ingrese una menor a 2.3 metros: ')
+    e = float(input('Ingrese su estatura en metros en el rango de 1.5 y 2,3:'))
+res = 0
+
+
+p = float(input('Ingrese su peso en Kilogramos en el rango de 35.5 y 199.5:'))
+while p < 35.5:
+	print('El peso es demasiado bajo, ingrese uno mayor a 35.5 Kilogramos: ')
+	p = float(input('Ingrese su peso en Kilogramos en el rango de 35.5 y 199.5:'))
+res = 0
+
+while p > 199.5:
+    print('La el peso es demasiado alto, ingrese uno menor a 199.5 Kilogramos: ')
+    p = float(input('Ingrese su estatura en metros en el rango de 1.5 y 2,3:'))
+res = 0
+"""
+
+
+""" 6.        Escriba un script o código en Python, usando una función, que permita 
+        calcular e imprimir los primeros n números de la serie de Fibonaci, 
+        y prúebela con n = 15 (Resultado: 0 1 1 2 3 5 8 13 21 34 .....)
+
+RESULTADO 6:
+def fib(n+1):
+	
+	if n < 2:
+		return n
+	return fib(n - 1) + fib(n - 2)
+
+for i in range(15):
+	print(fib(i))
+"""
+
+
+""" 7.        Escriba un script o código en Python, usando una función, que permita 
+        calcular e imprimir los valores de la serie de Fibonaci que son 
+        menores que n = 400
+
+RESPUESTA 7:
+a = 400
+
+def fib(n):
+	a, b = 0, 1
+	c = []
+	while a< n:
+		c.append(a)
+		a, b = b, a+b
+	return c
+
+resultado= fib(a)
+print(resultado)
+"""
+""" 8.        Escriba una función "def" que construya una lista con los múltiplos de 3, menores que n.
+        (use el operador resto o módulo '%' para verificar los números que son divisibles
+        exactamente por 3). Prúebela imprimiendo la lista para n = 58.
+
+RESPUESTA 8: 
+n = int(input('Hasta que numero (excluyemte) desea encontrar los Multiplos de 3: '))
+a = []
+def Multiplos(b):
+    for i in range(1, b):
+    	if i%3 == 0:
+    	    a.append(i)
+    return a
+fun = Multiplos(n)
+print(a)
+
+"""
+
+
+""" 9.        Escriba una estructura de control if - elif - else, que encuentre el valor máximo entre
+        a = 15; b = 13; c = 17.
+
+RESPUESTA 9:
+a , b , c = 15 , 13 ,  17
+
+if a > b >= c:
+	print('El valor mayor es el del numero a')
+elif b > a >= c:
+	print('El valor mayor es el del numero b')
+else:
+	print('El valor mayor es el del numero c') 
+"""
+
+
+""" 10.        Usando un par de ciclos for anidados, recorra la siguiente lista de 
+         nombres y apellidos de escritores famosos. Convierta cada nombre en 
+         una lista de elementos usando split, y de cada elemento de la lista
+         tome el primer valor de la cadena (índice 0) y concaténelo con el 
+         primer valor de las cadenas de los otros elementos del nombre de 
+         dicha persona, formando sus iniciales, agregándolas a una lista que 
+         debe imprimir al final:
+         nombres=['Gabriel García Marquez', 'Mario Vargas Llosa', 'Julio Cortazar', 'Oscar Wilde'\
+                'Virginia Wolf', 'William Shakespeare', 'Jorge Luis Borges', 'Mario Benedetti',\
+                'Agatha Christie']
+
+RESULTADO 10:
+Nombres = ['Gabriel García Marquez', 'Mario Vargas Llosa', 'Julio Cortazar', 'Oscar Wilde','Virginia Wolf', 'William Shakespeare', 'Jorge Luis Borges', 'Mario Benedetti','Agatha Christie']
+Resultado = []
+
+n = len(Nombres)
+for k in range(n):
+	a = list(Nombres[k].split())
+	b = str()
+
+	for i in range(len(a)):
+		b += a[i][0]
+	Resultado.append(b)
+
+print(Resultado)
+"""
